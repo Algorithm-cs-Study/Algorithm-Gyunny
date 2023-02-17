@@ -17,7 +17,6 @@ public class _02나머지1이되는수찾기 {
             if (n % i == 1) {
                 x = i;
                 break;
-
             }
         }
         return x;
