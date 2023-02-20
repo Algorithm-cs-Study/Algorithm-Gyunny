@@ -1,6 +1,7 @@
 package study.lv1;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class _01정수내림차순으로배치 {
@@ -15,12 +16,12 @@ public class _01정수내림차순으로배치 {
     public long solution(long n) {
         StringBuilder sb = new StringBuilder();
         String[] s = String.valueOf(n).split("");
-        Arrays.sort(s);
+        Arrays.sort(s, Collections.reverseOrder());
         for (String x : s) {
             sb.append(x);
         }
 
-        return Long.parseLong(sb.reverse().toString());
+        return Long.parseLong(sb.toString());
     }
 
 }

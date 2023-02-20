@@ -12,18 +12,18 @@ public class _08핸드폰번호가리기 {
     }
 
     public String solution(String phone_number) {
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
         int cnt = 0;
         char[] chars = phone_number.toCharArray();
         for (char x : chars) {
             if (cnt < phone_number.length() - 4) {
-                answer += "*";
+                sb.append("*");
                 cnt++;
             } else {
-                answer += x;
+                sb.append(x);
             }
         }
-        return answer;
+        return sb.toString();
     }
 
 }
