@@ -25,7 +25,7 @@ public class _19행렬의덧셈 {
                 arr1[i][j] += arr2[i][j];
             }
         }
-        
+
         return arr1;
     }
 
