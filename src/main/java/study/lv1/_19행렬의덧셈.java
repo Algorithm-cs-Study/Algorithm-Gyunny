@@ -16,14 +16,16 @@ public class _19행렬의덧셈 {
                 arr2[i][j] = sc.nextInt();
             }
         }
+        System.out.println(t.solution(arr1, arr2));
     }
 
     public int[][] solution(int[][] arr1, int[][] arr2) {
         for(int i=0; i<arr1.length; i++){
-            for(int j=0; j<arr1.length; j++){
+            for(int j=0; j<arr1[i].length; j++){
                 arr1[i][j] += arr2[i][j];
             }
         }
+        
         return arr1;
     }
 
