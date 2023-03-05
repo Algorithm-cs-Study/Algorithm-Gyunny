@@ -1,5 +1,6 @@
 package study.lv1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class _29비밀지도 {
@@ -20,16 +21,16 @@ public class _29비밀지도 {
 
     }
 
-    public String[] solution(int n, int[] arr1, int[] arr2) {
-        String[] answer = new String[n];
+    public ArrayList<String> solution(int n, int[] arr1, int[] arr2) {
+        ArrayList<String> answer = new ArrayList<>();
         String tmp;
 
-        for(int i = 0 ; i < n ; i++){
+        for (int i = 0; i < n; i++) {
             tmp = String.format("%16s", Integer.toBinaryString(arr1[i] | arr2[i]));
             tmp = tmp.substring(tmp.length() - n);
             tmp = tmp.replaceAll("1", "#");
             tmp = tmp.replaceAll("0", " ");
-            answer[i] = tmp;
+            answer.add(tmp);
         }
 
         return answer;
