@@ -9,13 +9,12 @@ public class _34크기가작은문자열 {
         System.out.println(t.solution(s, p));
     }
 
-    // 런타임 에러 .. ?
     public int solution(String s, String p) {
         int cnt = 0;
         for (int i = 0; i <= s.length() - p.length(); i++) {
             String str = s.substring(i, i + p.length());
             System.out.println("str = " + str);
-            if (Integer.parseInt(str) <= Integer.parseInt(p)) {
+            if (Long.parseLong(str) <= Long.parseLong(p)) {
                 cnt++;
             }
         }
