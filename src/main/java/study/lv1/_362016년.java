@@ -1,5 +1,7 @@
 package study.lv1;
 
+import java.time.LocalDate;
+
 public class _362016년 {
 
     public static void main(String[] args) {
@@ -12,8 +14,7 @@ public class _362016년 {
     public String solution(int a, int b) {
         String[] week = {"", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
 
-        String answer = "";
-        return answer;
+        return week[LocalDate.of(2016, a, b).getDayOfWeek().getValue()];
     }
 
 }

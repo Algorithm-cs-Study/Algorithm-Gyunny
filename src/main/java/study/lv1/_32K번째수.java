@@ -16,7 +16,6 @@ public class _32K번째수 {
 
     public ArrayList<Integer> solution(int[] array, int[][] commands) {
         ArrayList<Integer> answer = new ArrayList<>();
-        int cnt = 0;
 
         for (int[] info : commands) {
             int i = info[0];
@@ -26,7 +25,6 @@ public class _32K번째수 {
             int[] tmp = Arrays.copyOfRange(array, i - 1, j);
             Arrays.sort(tmp);
             answer.add(tmp[k - 1]);
-            cnt++;
         }
 
         return answer;
