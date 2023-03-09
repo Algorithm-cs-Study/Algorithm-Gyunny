@@ -33,14 +33,14 @@ public class _41모의고사 {
         }
 
         ArrayList<Integer> list = new ArrayList<>();
-        int maxScore = Math.max(cnt1, Math.max(cnt2, cnt3));
-        if (maxScore == cnt1) {
+        int max = Math.max(cnt1, Math.max(cnt2, cnt3));
+        if (max == cnt1) {
             list.add(1);
         }
-        if (maxScore == cnt2) {
+        if (max == cnt2) {
             list.add(2);
         }
-        if (maxScore == cnt3) {
+        if (max == cnt3) {
             list.add(3);
         }
 
