@@ -36,4 +36,13 @@ public class _21최대공약수와최대공배수 {
         return answer;
     }
 
+//    private int getGcd(int a, int b) {
+//        int c = a % b;
+//        if (c == 0) {
+//            return b;
+//        }
+//
+//        return getGcd(b, c);
+//    }
+
 }
