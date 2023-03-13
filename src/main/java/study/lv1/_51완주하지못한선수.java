@@ -19,7 +19,6 @@ public class _51완주하지못한선수 {
 
         Arrays.stream(participant)
                 .forEach(p -> result.put(p, result.getOrDefault(p, 0) + 1));
-
         Arrays.stream(completion)
                 .forEach(p -> result.put(p, result.get(p) - 1));
 
