@@ -22,7 +22,7 @@ public class _33두개뽑아서더하기 {
             }
         }
 
-        return answer.stream().mapToInt(Integer::intValue).toArray();
+        return answer.stream().sorted().mapToInt(Integer::intValue).toArray();
     }
 
 }
