@@ -11,34 +11,46 @@ public class _47로또 {
         }
     }
 
-    // 테스트 14...
     public int[] solution(int[] lottos, int[] win_nums) {
         int[] answer = new int[2];
         int cnt = 0;
-        int rank = 0;
+        int zero = 0;
 
         for (int i = 0; i < lottos.length; i++) {
-
             if (lottos[i] == 0) {
-                cnt++;
+                zero++;
+                continue;
             }
-
             for (int j = 0; j < win_nums.length; j++) {
                 if (lottos[i] == win_nums[j]) {
-                    rank++;
+                    cnt++;
+                    win_nums[j] = -1;
+                    break;
                 }
             }
         }
 
-        if (cnt == 0 && rank == 0) {
-            answer[0] = 1;
-            answer[1] = 6;
-        } else {
-            answer[0] = 7 - rank - cnt;
-            answer[1] = 7 - rank;
-        }
+        answer[0] = getRank(cnt + zero);
+        answer[1] = getRank(cnt);
 
         return answer;
+    }
+
+
+    public int getRank(int count) {
+        if (count == 6) {
+            return 1;
+        } else if (count == 5) {
+            return 2;
+        } else if (count == 4) {
+            return 3;
+        } else if (count == 3) {
+            return 4;
+        } else if (count == 2) {
+            return 5;
+        } else {
+            return 6;
+        }
     }
 
 }
