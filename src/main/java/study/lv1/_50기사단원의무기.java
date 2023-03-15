@@ -1,7 +1,5 @@
 package study.lv1;
 
-import java.util.ArrayList;
-
 public class _50기사단원의무기 {
 
     public static void main(String[] args) {
@@ -13,20 +11,21 @@ public class _50기사단원의무기 {
     }
 
     public int solution(int number, int limit, int power) {
+        int[] arr = new int[number + 1];
         int answer = 0;
-        int cnt = 1;
+
         for (int i = 1; i <= number; i++) {
-            for (int j = 1; j <= i; j++) {
-                if (i % j == 0) {
-                    cnt++;
-                    if (cnt > limit) {
-                        cnt = power;
-                        break;
-                    }
-                }
+            for (int j = 1; j <= number / i; j++) {
+                arr[i * j]++;
             }
-            answer += cnt;
-            cnt = 0;
+        }
+
+        for (int i = 1; i <= number; i++) {
+            if (arr[i] > limit) {
+                answer += power;
+            } else {
+                answer += arr[i];
+            }
         }
 
         return answer;
