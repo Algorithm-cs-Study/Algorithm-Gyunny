@@ -1,6 +1,8 @@
 package study.lv1;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class _63신고결과받기 {
 
@@ -15,23 +17,30 @@ public class _63신고결과받기 {
         }
     }
 
-    // 재도전..
-    public ArrayList<Integer> solution(String[] id_list, String[] report, int k) {
-        ArrayList<Integer> answer = new ArrayList<>();
-        Map<String, ArrayList<String>> map = new TreeMap<>();
+    public int[] solution(String[] id_list, String[] report, int k) {
+        int[] answer = new int[id_list.length];
+        Map<String, HashSet<String>> map = new HashMap<>();
+        Map<String, Integer> countMap = new HashMap<>();
 
-        for (String x : id_list) {
-            ArrayList<String> arr = new ArrayList<>();
+        for (int i = 0; i < id_list.length; i++) {
+            String name = id_list[i];
+            map.put(name, new HashSet<>());
+            countMap.put(name, i);
+        }
 
-            for (String y : report) {
-                String[] reportList = y.split(" ");
-                String from = reportList[0];
-                String to = reportList[1];
+        for (String s : report) {
+            String[] str = s.split(" ");
+            String from = str[0];
+            String to = str[1];
+            map.get(to).add(from);
+        }
 
-                if (x.equals(from)) {
-                    arr.add(to);
+        for (int i = 0; i < id_list.length; i++) {
+            HashSet<String> set = map.get(id_list[i]);
+            if (set.size() >= k) {
+                for (String x : set) {
+                    answer[countMap.get(x)]++;
                 }
-                map.put(x, arr);
             }
         }
 
