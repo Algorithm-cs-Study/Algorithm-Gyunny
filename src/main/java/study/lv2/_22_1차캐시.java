@@ -7,10 +7,10 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class _221차캐시 {
+public class _22_1차캐시 {
 
     public static void main(String[] args) throws IOException {
-        _221차캐시 t = new _221차캐시();
+        _22_1차캐시 t = new _22_1차캐시();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int cacheSize = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
