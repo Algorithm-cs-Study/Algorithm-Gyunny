@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class _22n제곱배열자르기 {
+public class _23n제곱배열자르기 {
 
     public static void main(String[] args) throws IOException {
-        _22n제곱배열자르기 t = new _22n제곱배열자르기();
+        _23n제곱배열자르기 t = new _23n제곱배열자르기();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int left = Integer.parseInt(br.readLine());
