@@ -3,6 +3,7 @@ package study2.스택_큐;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -17,7 +18,7 @@ public class _001같은숫자는싫어 {
         for (int i = 0; i < len; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        System.out.println(t.solution(arr));
+        System.out.println(Arrays.toString(t.solution(arr)));
     }
 
     public int[] solution(int[] arr) {
