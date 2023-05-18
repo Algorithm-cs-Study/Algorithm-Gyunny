@@ -15,10 +15,16 @@ public class _002올바른괄호 {
     }
 
     public boolean solution(String s) {
+        /**
+         * 문자열을 검사하기 위한 스택
+         */
         Stack<Character> stack = new Stack<>();
         int len = s.length();
         for (int i = 0; i < len; i++) {
             if (s.charAt(i) == ')') {
+                /**
+                 * 스택이 비어있다면 올바르지 않은 괄호를 나타내므로 false 를 반환
+                 */
                 if (stack.isEmpty()) {
                     return false;
                 }

@@ -31,13 +31,25 @@ public class _003기능개발 {
         int s_len = speeds.length;
 
         for (int i = 0; i < s_len; i++) {
+            /**
+             * 각 기능이 완료되는 데 필요한 시간을 계산
+             */
             int date = (int) Math.ceil((100 - progresses[i]) / (double) speeds[i]);
             if (!q.isEmpty() && q.peek() < date) {
+                /**
+                 * 현재 큐에 있는 모든 기능을 한번에 추가
+                 */
                 arr.add(q.size());
                 q.clear();
             }
+            /**
+             * 현재 기능의 완료 시간을 큐에 추가
+             */
             q.offer(date);
         }
+        /**
+         * 마지막에 있는 기능을 추가
+         */
         arr.add(q.size());
 
         int[] answer = new int[arr.size()];
