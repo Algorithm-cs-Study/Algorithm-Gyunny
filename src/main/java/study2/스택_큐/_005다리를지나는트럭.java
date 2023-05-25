@@ -3,6 +3,8 @@ package study2.스택_큐;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class _005다리를지나는트럭 {
@@ -22,10 +24,37 @@ public class _005다리를지나는트럭 {
     }
 
     public int solution(int bridge_length, int weight, int[] truck_weights) {
-        int answer = 0;
+        Queue<Integer> bridge = new LinkedList<>();
+        int current_weight = 0;
+        int time = 0;
 
+        int len = truck_weights.length;
+        for (int i = 0; i < len; i++) {
+            int current_truck = truck_weights[i];
 
-        return answer;
+            while (true) {
+                if (bridge.isEmpty()) {
+                    bridge.add(current_truck);
+                    current_weight += current_truck;
+                    time++;
+                    break;
+                } else if (bridge.size() == bridge_length) {
+                    current_weight -= bridge.poll();
+                } else {
+                    if (current_weight + current_truck <= weight) {
+                        bridge.add(current_truck);
+                        current_weight += current_truck;
+                        time++;
+                        break;
+                    } else {
+                        bridge.add(0);
+                        time++;
+                    }
+                }
+            }
+        }
+
+        return time + bridge_length;
     }
 
 }
