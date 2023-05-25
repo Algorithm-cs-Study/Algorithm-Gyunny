@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class _006주식가격 {
+public class _006주식 {
 
     public static void main(String[] args) throws IOException {
-        _006주식가격 t = new _006주식가격();
+        _006주식 t = new _006주식();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int[] prices = new int[st.countTokens()];
