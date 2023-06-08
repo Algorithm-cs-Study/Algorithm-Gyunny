@@ -25,17 +25,19 @@ public class _001더맵게 {
 
     public int solution(int[] scoville, int k) {
         int answer = 0;
-        PriorityQueue<Integer> queue;
-
-        queue = Arrays.stream(scoville)
+        // 우선순위 큐를 사용하여 스코빌 지수를 오름차순으로 관리
+        PriorityQueue<Integer> queue = Arrays.stream(scoville)
                 .boxed()
                 .collect(Collectors.toCollection(PriorityQueue::new));
-
-        while(queue.peek() < k) {
+        // 모든 음식의 스코빌 지수가 k 이상이 될 때 까지 반복
+        while (queue.peek() < k) {
+            // 음식이 1개 밖에 없는데 k 이하면 -1을 반환
             if (queue.size() == 1) {
                 return -1;
             }
+            // 스코빌 지수가 가장 낮은 두 개의 음식을 합치고 결과를 큐에 다시 합침
             queue.add(queue.poll() + queue.poll() * 2);
+            // 섞은 횟수를 증가 하여 반환
             answer++;
         }
 

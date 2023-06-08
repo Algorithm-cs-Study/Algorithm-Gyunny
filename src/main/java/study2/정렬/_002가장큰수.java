@@ -21,6 +21,7 @@ public class _002가장큰수 {
     }
 
     public String solution(int[] numbers) {
+        // 숫자 배열을 문자열 배열로 변환
         String[] arr = new String[numbers.length];
         int a_len = arr.length;
 
@@ -28,12 +29,13 @@ public class _002가장큰수 {
             arr[i] = String.valueOf(numbers[i]);
         }
 
+        // 문자열 배열을 s2 + s1 과 s1 + s2 로 비교하여 정렬
         Arrays.sort(arr, (s1, s2) -> (s2 + s1).compareTo(s1 + s2));
-
+        // 가장 큰 수 가 0일 경우 0으로 반환
         if (arr[0].equals("0")) {
             return "0";
         }
-
+        // 그렇지 않다면 숫자를 붙여서 문자열로 만들어서 반환
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < a_len; i++) {
             answer.append(arr[i]);

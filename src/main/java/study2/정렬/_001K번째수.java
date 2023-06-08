@@ -35,14 +35,15 @@ public class _001K번째수 {
         int len = commands.length;
 
         int[] answer = new int[len];
-
+        // 각 인덱스에 따라 연산을 수행하기 위한 반복문
         for (int c = 0; c < len; c++) {
             int i = commands[c][0];
             int j = commands[c][1];
             int k = commands[c][2];
-
+            // i -1 부터 j 까지 복사 및 정렬
             int[] tmp = Arrays.copyOfRange(array, i - 1, j);
             Arrays.sort(tmp);
+            // k -1 번째의 값을 결과 배열에 추가
             answer[c] = tmp[k - 1];
         }
 
