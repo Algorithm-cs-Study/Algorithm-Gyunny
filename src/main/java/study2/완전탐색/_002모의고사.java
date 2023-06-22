@@ -24,8 +24,9 @@ public class _002모의고사 {
 
     public int[] solution(int[] answers) {
         int[] a = {1, 2, 3, 4, 5};
-        int[] b = {2, 1, 2, 3, 2};
-        int[] c = {3, 3, 1, 1, 2};
+        int[] b = {2, 1, 2, 3, 2, 4, 2, 5};
+        int[] c = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+
         int[] score = new int[3];
         for (int i = 0; i < answers.length; i++) {
             if (answers[i] == a[i % a.length]) {
@@ -38,8 +39,10 @@ public class _002모의고사 {
                 score[2]++;
             }
         }
+
         int maxScore = Math.max(score[0], Math.max(score[1], score[2]));
         ArrayList<Integer> list = new ArrayList<>();
+
         if (maxScore == score[0]) {
             list.add(1);
         }
@@ -50,7 +53,7 @@ public class _002모의고사 {
             list.add(3);
         }
 
-        return list.stream().mapToInt(i -> i.intValue()).toArray();
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
 }
