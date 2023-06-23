@@ -58,11 +58,18 @@ public class _003소수찾기 {
         return true;
     }
 
-    public void permutation(String numbers, String str, Set<Integer> set) {
-        int len = numbers.length();
+    // numbers 문자열에 있는 모든 문자를 사용하여 만들 수 있는 모든 숫자를 생성하고 set에 추가하여 중복되지 않은 모든 숫자를 생성
+    private void permutation(String numbers, String str, Set<Integer> set) {
+        // str이 비어있지 않다면 숫자로 변환하여 set에 추가
         if (!"".equals(str)) {
             set.add(Integer.valueOf(str));
         }
+
+        // numbers 길이 미리 선언
+        int len = numbers.length();
+        // numbers 각 문자에 대해 해당 문자를 str에 추가, 나머지 문자열로 재귀 호출
+        // 가능한 모든 숫자를 만들기 위해 모든 위치에서 문자를 선택, 선택한 문자를 제외한 나머지 문자열로 당므 순열을 생성하여 재귀 호출
+        // numbers 문자열로 만들 수 있는 모든 수열을 set에 저장
         for (int i = 0; i < len; i++) {
             permutation(
                     numbers.substring(0, i) + numbers.substring(i + 1, len),
