@@ -22,16 +22,20 @@ public class _001최소직사각형 {
     }
 
     public int solution(int[][] sizes) {
+        // max_w, max_h 변수를 생성하고 최소 값으로 초기화 -> 각각 넓이와 높이 저장하는 데 사용
         int max_w = Integer.MIN_VALUE;
         int max_h = Integer.MIN_VALUE;
-        
+
         for (int[] size : sizes) {
+            // 가로 세로 중 더 작은 값을 min에 저장하고 더 큰 값을 max에 저장
             int min = Math.min(size[0], size[1]);
             int max = Math.max(size[0], size[1]);
+            // max 값을 이전 max_w와 비교하여 더 큰 값을 max_w에 저장 [max_h 도 마찬가지]
             max_w = Math.max(max, max_w);
             max_h = Math.max(min, max_h);
         }
 
+        // 가장 큰 넓이와 높이를 곱하여 반환
         return max_w * max_h;
     }
 
