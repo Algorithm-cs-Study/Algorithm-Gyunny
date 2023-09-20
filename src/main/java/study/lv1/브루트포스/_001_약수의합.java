@@ -1,4 +1,4 @@
-package study.lv1;
+package study.lv1.브루트포스;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;
